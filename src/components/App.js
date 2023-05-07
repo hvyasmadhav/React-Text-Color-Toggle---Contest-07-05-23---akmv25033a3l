@@ -2,15 +2,16 @@ import React, {useEffect, useState} from 'react'
 import '../styles/App.css';
 
 const App = () => {
-//code here 
-  const {isBlue, setIsBlue} = useState(false);
-  const toggleButton = ()=>{
-    setIsBlue(!isBlue);
-  };
+  const [changeColor, setChangeColor] = useState(false);
+
+const handleClick=()=>{
+  setChangeColor(!changeColor)
+}
+
   return (
     <div id="main">
-      <p className={isBlue ? "blueColor" : "redColor"} >Newton School</p>
-      <button id='button' onClick={toggleButton}>Change Style</button>
+      <p className={`${(changeColor===true)?'blueColor':'redColor'}`} >Newton School</p>
+      <button id='button' onClick={handleClick}>Change Style</button>
     </div>
   )
 }
